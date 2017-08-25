@@ -3,27 +3,51 @@
 <head>
   <link rel="stylesheet" href="onsenui/css/onsenui.css">
   <link rel="stylesheet" href="onsenui/css/onsen-css-components.min.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?rand=<?php echo rand() ?>">
   <script src="onsenui/js/onsenui.min.js"></script>
   <script src="js/jquery-3.2.1.min.js"></script>
 </head>
 <script>
     
-
+     $(function(){
+      // Initialization code
+          $('ons-button').on('click', function(e) {
+            ons.notification.alert('Button is tapped!');
+          })
+    });
+    
+    function login(){
+        
+    }
 </script>
 </head>
 
 <body>
- 
-
 <ons-page class="page login">
   <div class="page__background"></div>
   <div class="page__content">
-    Some content here
-    <ons-input></ons-input>
-    <div>More content</div>
+    <div class="logo-login">
+        <img src="image/login-logo.png" />
+    </div> 
+    <div id="box-login" style="text-align: center; margin-top: 30px;">
+        <form>
+        <p>
+          <ons-input id="username" modifier="underbar" type="email" placeholder="Email" float></ons-input>
+        </p>
+        <p>
+          <ons-input id="password" modifier="underbar" type="password" placeholder="Contrasenya" float></ons-input>
+        </p>
+        <p style="margin-top: 30px;">
+          <ons-button onclick="login()">Sign in</ons-button>
+        </p>
+        
+      </div>
   </div>  
 </ons-page>
+  
+  
+ 
+
   
 </body>
 </html>
